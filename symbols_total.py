@@ -1,6 +1,8 @@
-from connect_to_metatrader5 import connect_to_metatrader5
+from mt5_connect import mt5_connect
+import MetaTrader5 as mt5
+from loguru import logger
 
-def symbols_total():
-    connect_to_metatrader5()
-    symbols_total = mt5.symbols_total()
-    print(symbols_total)
+connect = mt5_connect()
+
+symbols = mt5.symbols_total()
+print("There are ",symbols, "symbols!")

@@ -1,6 +1,8 @@
 import MetaTrader5 as mt5
+from loguru import logger
 
-def connect_to_metatrader5():
+def mt5_connect():
     if not mt5.initialize():
         print("initialize failed, error code =", mt5.last_error())
         quit()
+logger.info("Connection Successful!")
