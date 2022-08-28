@@ -1,12 +1,12 @@
-import MetaTrader5 as mt5
-from loguru import logger
-from symbols_total import symbols_total
- 
+import pytz
+from datetime import datetime, timezone
 
-
-
-
+def run():
+    
+    now_utc = datetime.now(timezone.utc)
+    local_tz = now_utc.tzinfo
+    local_tzname = local_tz.tzname(now_utc)
+    print(local_tzname)
 
 if __name__ == '__main__':
-    mt5.initialize()
-    symbols_total = symbols_total()
+   run()
