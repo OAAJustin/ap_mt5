@@ -1,11 +1,12 @@
-from mt5_connect import mt5_connect
 import MetaTrader5 as mt5
+from loguru import logger
+from symbols_total import symbols_total
+ 
 
-# connect to the server
-mt5_connect()
 
-# Get all Symbols
-symbols = mt5.symbols_total()
 
-# Print the symbols
-print(symbols)
+
+
+if __name__ == '__main__':
+    mt5.initialize()
+    symbols_total = symbols_total()
